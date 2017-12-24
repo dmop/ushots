@@ -1,6 +1,6 @@
 import { React, Component } from "react";
 
-class ShotsList extends React.Component {
+class ShotsList extends Component {
   render() {
     return <div>asdsadsa </div>;
   }

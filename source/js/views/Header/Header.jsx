@@ -1,38 +1,37 @@
 import React from "react";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Visibility
-} from "semantic-ui-react";
+import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react'
+
 
 const FixedMenu = () => (
-  <Menu fixed="top" size="large">
+    <Menu fixed='top' inverted>
     <Container>
-        
-      <Menu.Item as="a" active>
-        Home
+      <Menu.Item as='a' header>
+        <Image
+          size='mini'
+          src='/logo.png'
+          style={{ marginRight: '1.5em' }}
+        />
+        Project Name
       </Menu.Item>
-      <Menu.Item as="a">Work</Menu.Item>
-      <Menu.Item as="a">Company</Menu.Item>
-      <Menu.Item as="a">Careers</Menu.Item>
-      <Menu.Menu position="right">
-        <Menu.Item className="item">
-          <Button as="a">Log in</Button>
-        </Menu.Item>
-        <Menu.Item>
-          <Button as="a" primary>
-            Sign Up
-          </Button>
-        </Menu.Item>
-      </Menu.Menu>
+      <Menu.Item as='a'>Home</Menu.Item>
+
+      <Dropdown item simple text='Dropdown'>
+        <Dropdown.Menu>
+          <Dropdown.Item>List Item</Dropdown.Item>
+          <Dropdown.Item>List Item</Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Header>Header Item</Dropdown.Header>
+          <Dropdown.Item>
+            <i className='dropdown icon' />
+            <span className='text'>Submenu</span>
+            <Dropdown.Menu>
+              <Dropdown.Item>List Item</Dropdown.Item>
+              <Dropdown.Item>List Item</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown.Item>
+          <Dropdown.Item>List Item</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </Container>
   </Menu>
 );

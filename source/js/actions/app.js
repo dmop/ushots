@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_SHOTS, GET_SHOT } from "./types";
+import { GET_SHOTS, GET_SHOT,GET_COMMENTS } from "./types";
 
 const API_URL = "https://api.dribbble.com/v1";
 const Token =
@@ -28,6 +28,21 @@ export function getShot(id) {
         console.log("Resposta do axios",response)        
         dispatch({
           type: GET_SHOT,
+          payload: response
+        });
+      })
+      .catch(() => {});
+  };
+}
+
+export function getComments(url) {
+  return function(dispatch) {
+    axios
+      .get(`${url}?access_token=${Token}`)
+      .then(response => {
+        console.log("Resposta do axios",response)
+        dispatch({
+          type: GET_COMMENTS,
           payload: response
         });
       })

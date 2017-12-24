@@ -9,6 +9,12 @@ class ShotItem extends Component {
     this.props.getShot(4040135);
     console.log(this.props.shot);
   }
+  
+  // componentDidMount() {
+  //   const { id } = this.props.match.params;
+  //   this.props.getShot(id);
+  // }
+
 
   render() {
     if (!this.props.shot) return null;
