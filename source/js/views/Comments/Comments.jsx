@@ -7,12 +7,10 @@ import { connect } from "react-redux";
 class Comments extends Component {
   componentWillMount() {
     this.props.getComments(this.props.commentList);
-    console.log("Ta aqui caralho",this.props.comments);
   }
 
   renderComments() {
     return this.props.comments.map(comment => {
-      console.log("Porra",comment)
       return (
         <Comment key={comment.id}>
           <Comment.Avatar src={comment.user.avatar_url} />

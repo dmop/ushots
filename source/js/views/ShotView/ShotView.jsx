@@ -17,7 +17,7 @@ import { getShot } from "../../actions/app";
 import { connect } from "react-redux";
 import Comments from "../Comments/Comments";
 
-class ShotItem extends Component {
+class ShotView extends Component {
   //   componentWillMount() {
   //     this.props.getShot(4040135);
   //     console.log(this.props.shot);
@@ -25,7 +25,6 @@ class ShotItem extends Component {
 
   componentWillMount() {
     const { id } = this.props.match.params;
-    console.log("To aqui");
     this.props.getShot(id);
   }
 
@@ -35,12 +34,28 @@ class ShotItem extends Component {
     return (
       <div>
         <Segment style={{ padding: "8em 0em" }} vertical>
-          <Container text style={{}}>
-            <Header as="h1">Sticky Example</Header>
-            <p>
-              This example shows how to use lazy loaded images, a sticky menu,
-              and a simple text container
-            </p>
+          <Container text>
+            <Header style={{ fontSize: "1.5em" }} as="h1">
+              <Image
+               
+                avatar
+                size="large"
+                src={this.props.shot.user.avatar_url}
+              />
+              {this.props.shot.title}
+            </Header>
+            <div>
+              by &ensp;
+              <a href={this.props.shot.user.html_url}>
+                {this.props.shot.user.name}
+              </a>
+              &ensp; for &ensp;
+              <a href={this.props.shot.team.html_url}>
+                {this.props.shot.team.name}
+              </a>
+              &ensp; on &ensp;
+              {this.props.shot.created_at}
+            </div>
 
             <Grid container stackable verticalAlign="middle">
               <Grid.Row>
@@ -61,13 +76,6 @@ class ShotItem extends Component {
                     We can give your company superpowers to do things that they
                     never thought possible. Let us delight your customers and
                     empower your needs... through pure data analytics.
-                  </p>
-                  <Header as="h3" style={{ fontSize: "2em" }}>
-                    We Make Bananas That Can Dance
-                  </Header>
-                  <p style={{ fontSize: "1.33em" }}>
-                    Yes that's right, you thought it was the stuff of dreams,
-                    but even bananas can be bioengineered.
                   </p>
                 </Grid.Column>
               </Grid.Row>
@@ -93,4 +101,4 @@ class ShotItem extends Component {
 function mapStateToProps(state) {
   return { shot: state.shots.shot };
 }
-export default connect(mapStateToProps, { getShot })(ShotItem);
+export default connect(mapStateToProps, { getShot })(ShotView);

@@ -4,10 +4,9 @@ import { Component } from "react";
 import { getShot } from "../../actions/app";
 import { connect } from "react-redux";
 
-class ShotItem extends Component {
+class ShotsItem extends Component {
   componentWillMount() {
     this.props.getShot(4040135);
-    console.log(this.props.shot);
   }
   
   // componentDidMount() {
@@ -61,4 +60,4 @@ class ShotItem extends Component {
 function mapStateToProps(state) {
   return { shot: state.shots.shot };
 }
-export default connect(mapStateToProps, { getShot })(ShotItem);
+export default connect(mapStateToProps, { getShot })(ShotsItem);

@@ -1,1 +1,8 @@
+@import "./base/_helpers.scss";
+@import "../js/views/Header/header.scss";
+@import "/home/dmop/Documentos/Projects/ushots/source/js/views/ShotsList/ShotsList.scss";
+@import "/home/dmop/Documentos/Projects/ushots/source/js/views/ShotView/ShotView.scss";
 
+.ui.inverted.segment, .ui.primary.inverted.segment{
+    background: #3a3a3a
+}

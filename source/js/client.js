@@ -16,7 +16,7 @@ import "../scss/app.scss";
 import NotFound from './views/NotFound';
 import HomePage from './views/Home/Home';
 import ShotsList from './views/ShotsList/ShotsList';
-import ShotItem from './views/ShotsItem/ShotItem';
+import ShotsItem from './views/ShotsItem/ShotsItem';
 import ShotView from './views/ShotView/ShotView';
 
 es6Promise.polyfill();
@@ -29,8 +29,8 @@ const Root = () => (
       <App>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={ShotItem} />
-            <Route exact path="/:id" component={ShotView} />
+            <Route exact path="/" component={ShotsList} />
+            <Route exact path="/shots/:id" component={ShotView} />
             <Route exact path="*" component={NotFound} />
           </Switch>
         </BrowserRouter>

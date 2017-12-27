@@ -10,7 +10,6 @@ export function getShots() {
     axios
       .get(`${API_URL}/shots?access_token=${Token}`)
       .then(response => {
-        console.log("Resposta do axios",response)
         dispatch({
           type: GET_SHOTS,
           payload: response
@@ -25,7 +24,6 @@ export function getShot(id) {
     axios
       .get(`${API_URL}/shots/${id}?access_token=${Token}`)
       .then(response => {
-        console.log("Resposta do axios",response)        
         dispatch({
           type: GET_SHOT,
           payload: response
@@ -40,7 +38,6 @@ export function getComments(url) {
     axios
       .get(`${url}?access_token=${Token}`)
       .then(response => {
-        console.log("Resposta do axios",response)
         dispatch({
           type: GET_COMMENTS,
           payload: response
