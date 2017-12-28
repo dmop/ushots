@@ -37,7 +37,6 @@ class ShotView extends Component {
           <Container text>
             <Header style={{ fontSize: "1.5em" }} as="h1">
               <Image
-               
                 avatar
                 size="large"
                 src={this.props.shot.user.avatar_url}
@@ -59,24 +58,56 @@ class ShotView extends Component {
 
             <Grid container stackable verticalAlign="middle">
               <Grid.Row>
-                <Grid.Column floated="right" width={8}>
+                <Grid.Column floated="left" width={10}>
                   <Image
                     bordered
                     rounded
                     size="large"
-                    src={this.props.shot.images.teaser}
+                    src={this.props.shot.images.hidpi}
                   />
                 </Grid.Column>
 
                 <Grid.Column width={4}>
-                  <Header as="h3" style={{ fontSize: "2em" }}>
-                    We Help Companies and Companions
-                  </Header>
-                  <p style={{ fontSize: "1.33em" }}>
-                    We can give your company superpowers to do things that they
-                    never thought possible. Let us delight your customers and
-                    empower your needs... through pure data analytics.
-                  </p>
+                  <List divided relaxed>
+                    <List.Item>
+                      <List.Icon
+                        name="heart"
+                        size="large"
+                        verticalAlign="middle"
+                      />
+                      <List.Content>
+                        <List.Description as="a">
+                          {this.props.shot.likes_count} likes
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+
+                    <List.Item>
+                      <List.Icon
+                        name="eye"
+                        size="large"
+                        verticalAlign="middle"
+                      />
+                      <List.Content>
+                        <List.Description as="a">
+                          {this.props.shot.views_count} views
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+
+                    <List.Item>
+                      <List.Icon
+                        name="bitbucket"
+                        size="large"
+                        verticalAlign="middle"
+                      />
+                      <List.Content>
+                        <List.Description as="a">
+                          {this.props.shot.buckets_count} buckets
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                  </List>
                 </Grid.Column>
               </Grid.Row>
 
