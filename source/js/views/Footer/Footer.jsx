@@ -14,8 +14,8 @@ import {
 } from "semantic-ui-react";
 
 const FixedMenu = () => (
-          <Segment inverted vertical style={{ padding: '5em 0em' }}>
-          <Container>
+          <Segment  inverted vertical style={{ padding: '5em 0em' }}>
+          <Container >
             <Grid divided inverted stackable>
               <Grid.Row>
                 <Grid.Column width={3}>
